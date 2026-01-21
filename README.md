@@ -223,6 +223,7 @@ sqlite3 patient_retention.db
 
 # Run analysis
 jupyter notebook notebooks/patient_retention_analysis.ipynb
+```
 
 
 ## 📞 Contact
