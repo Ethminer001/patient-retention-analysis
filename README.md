@@ -233,7 +233,9 @@ jupyter notebook notebooks/patient_retention_analysis.ipynb
 - **GitHub** — [@Ethminer001](https://github.com/Ethminer001)
 
 
-🙏 Acknowledgments
+## 🙏 Acknowledgments
+
+
 Dataset: Kaggle Medical Appointment No-Shows
 
 Inspired by real-world healthcare retention challenges
