@@ -1,6 +1,3 @@
-
-
-```markdown
 # 🏥 Patient Retention Analysis
 
 ## 🎯 Business Problem
@@ -67,67 +64,57 @@ A multi-specialty medical clinic network is experiencing a **30% patient no-show
 
 ---
 
-## 📈 Key Findings
+## 🧪 Exploratory Data Analysis (EDA)
 
-### 1. SMS Reminders Are Highly Effective
+![Age Distribution](visuals/age_distribution.png)  
+*Shows most patients are between 20–40 years old, the prime working-age group.*
 
-![No-show by SMS Reminder](visuals/no_show_sms.png)
+![No-show by Age Group](visuals/no_show_by_age_group.png)  
+*Younger patients (<30) have higher no-show rates compared to older patients.*
 
-- **With SMS:** 16.7% no-show rate  
-- **Without SMS:** 27.6% no-show rate  
-- **Impact:** 10.9 percentage point reduction (39% relative decrease)
+![No-show by SMS Reminder](visuals/no_show_by_sms.png)  
+*Patients receiving SMS reminders are far less likely to miss appointments.*
 
----
+![No-show by Booking Advance](visuals/no_show_by_booking_advance.png)  
+*No-shows increase sharply when appointments are booked more than 30 days in advance.*
 
-### 2. Long Advance Bookings Dramatically Increase No-Shows
-
-![No-show by Booking Advance](visuals/no_show_booking_advance.png)
-
-- Same day: 18.3%  
-- 1–7 days: 19.2%  
-- 8–14 days: 21.5%  
-- 15–30 days: 24.8%  
-- **30+ days: 32.1%**
+![Exploration Charts](visuals/exploration_charts.png)  
+*Combined dashboard of demographic and behavioral patterns.*
 
 ---
 
-### 3. High-Risk Patient Segment Drives Disproportionate No-Shows
+## 🤖 Modeling & Feature Insights
 
-![Patient Segmentation](visuals/patient_segmentation.png)
+![Model Comparison](visuals/model_comparison.png)  
+*Stacking model achieved the highest AUC score, outperforming Logistic Regression and Random Forest.*
 
-- **Low Risk (<25%):** 54,203 patients (87.0%)  
-- **Medium Risk (25–50%):** 5,849 patients (9.4%)  
-- **High Risk (>50%):** 2,247 patients (3.6%)
+![Feature Importance](visuals/feature_importance.png)  
+*Waiting days and SMS reminders are the strongest predictors of patient attendance.*
 
-High-risk group contributes **15% of all no-shows** despite being only 3.6% of patients.
+![Feature Importance (Gradient Boosting)](visuals/feature_importance_gb.png)  
+*Gradient Boosting highlights behavioral factors as key drivers of no-shows.*
+
+![Feature Importance (XGBoost)](visuals/feature_importance_xgb.png)  
+*XGBoost confirms SMS reminders and booking advance time as critical features.*
+
+![Risk Heatmap](visuals/risk_heatmap.png)  
+*No-show risk rises with longer waiting days, especially without SMS reminders.*
+
+![Patient Segmentation](visuals/patient_segmentation.png)  
+*Risk categories show most patients are low risk, but a small high-risk group drives many no-shows.*
+
+![Patient Segmentation (Bar)](visuals/patient_segmentation_bar.png)  
+*Bar chart view of patient distribution across risk categories.*
 
 ---
 
-### 4. Chronic Condition Patients Show Complex Behavior
+## 💰 Intervention ROI & Operational Patterns
 
-- No chronic: 19.8% no-show  
-- 1 chronic: 21.2%  
-- 2+ chronic: 23.4%
+![Intervention ROI](visuals/intervention_roi.png)  
+*SMS reminders deliver the highest ROI, followed by scheduling optimization and high-risk outreach.*
 
-**With SMS reminders:**
-- Chronic patients: 15.9% no-show  
-- Healthy patients: 17.1% no-show
-
----
-
-### 5. Geographic Disparities Exist
-
-![Temporal Patterns](visuals/temporal_patterns.png)
-
-**Top 3 Best-Performing Neighborhoods:**
-- Maria Ortiz: 15.2%  
-- Resistência: 16.8%  
-- Centro: 17.3%
-
-**Bottom 3 Worst-Performing Neighborhoods:**
-- Santos Dumont: 31.2%  
-- Jesus de Nazareth: 29.8%  
-- Itararé: 28.9%
+![Temporal Patterns](visuals/temporal_patterns.png)  
+*Appointments peak midweek, with Friday having the highest attendance and weekends the lowest.*
 
 ---
 
@@ -146,8 +133,6 @@ High-risk group contributes **15% of all no-shows** despite being only 3.6% of p
 ---
 
 ## 💰 Total Business Impact
-
-![Intervention ROI](visuals/intervention_roi.png)
 
 **Year 1 Projection:**
 - **Revenue Recovery:** $2,374,000  
@@ -186,7 +171,6 @@ High-risk group contributes **15% of all no-shows** despite being only 3.6% of p
 
 ## 📁 Project Structure
 
-```
 patient-retention-analysis/
 ├── README.md
 ├── data/
@@ -198,19 +182,24 @@ patient-retention-analysis/
 │   └── 04_department_performance.sql
 ├── notebooks/
 │   └── patient_retention_analysis.ipynb
-├── visuals/
+├── visuals/                     # All generated charts & plots
 │   ├── temporal_patterns.png
 │   ├── risk_heatmap.png
 │   ├── patient_segmentation.png
 │   ├── feature_importance.png
 │   ├── intervention_roi.png
-│   ├── no_show_sms.png
-│   ├── no_show_booking_advance.png
-│   └── age_distribution.png
+│   ├── no_show_by_sms.png
+│   ├── no_show_by_booking_advance.png
+│   ├── no_show_by_age_group.png
+│   ├── age_distribution.png
+│   ├── exploration_charts.png
+│   ├── feature_importance_gb.png
+│   ├── feature_importance_xgb.png
+│   └── patient_segmentation_bar.png
 └── presentation/
     └── executive_summary.pdf
-```
 
+    
 ---
 
 ## 🚀 How to Reproduce
@@ -234,27 +223,20 @@ sqlite3 patient_retention.db
 
 # Run analysis
 jupyter notebook notebooks/patient_retention_analysis.ipynb
-```
 
----
 
 ## 📞 Contact
 
-- Portfolio: (https://github.com/Ethminer001)
-- LinkedIn: [linkedin.com/in/eriioluwa](https://linkedin.com/in/eriioluwa)  
-- Email: olowu.tayo200@gmail.com  
-- GitHub: @Ethminer001 (https://github.com/Ethminer001)
+- **LinkedIn** — [linkedin.com/in/eriioluwa](https://www.linkedin.com/in/eriioluwa)  
+- **Email** — olowu.tayo200@gmail.com  
+- **GitHub** — [@Ethminer001](https://github.com/Ethminer001)
 
----
 
-## 🙏 Acknowledgments
+🙏 Acknowledgments
+Dataset: Kaggle Medical Appointment No-Shows
 
-- Dataset: Kaggle Medical Appointment No-Shows  
-- Inspired by real-world healthcare retention challenges  
-- Built for data analytics portfolio
+Inspired by real-world healthcare retention challenges
 
----
+Built for data analytics portfolio
 
-*End-to-end healthcare analytics: raw data → predictive modeling → measurable business ROI.*
-```
-
+End-to-end healthcare analytics: raw data → predictive modeling → measurable business ROI.
