@@ -54,8 +54,8 @@ A multi-specialty medical clinic network is experiencing a **30% patient no-show
    **Tools:** Python (Pandas, SciPy)
 
 4. **Predictive Modeling**  
-   Random Forest classifier + ensemble models  
-   ROC-AUC: ~0.72  
+   Stacking ensemble of Random Forest, Gradient Boosting and XGBoost  
+   Test ROC-AUC: 0.84 (0.8421)  
    **Tools:** Scikit-learn, XGBoost, imbalanced-learn (SMOTE)
 
 5. **Intervention Analysis**  
@@ -146,6 +146,7 @@ A multi-specialty medical clinic network is experiencing a **30% patient no-show
 ## ⚠️ Limitations and Future Work
 
 - Data limited to April–June 2016  
+- Revenue recovery and ROI figures are projections from stated assumptions, not measured results  
 - No direct health outcome linkage  
 - Neighborhood-level geography only  
 - No appointment type differentiation  
@@ -162,7 +163,7 @@ A multi-specialty medical clinic network is experiencing a **30% patient no-show
 
 - SQL: Complex queries, CTEs, window functions  
 - Python: Pandas, feature engineering, SMOTE, modeling  
-- Predictive Modeling: Random Forest, XGBoost, Stacking, ROC-AUC ~0.72  
+- Predictive Modeling: Random Forest, XGBoost, Stacking, test ROC-AUC 0.84  
 - Visualization: Matplotlib, Seaborn  
 - Business: ROI modeling, intervention planning  
 - Domain: Healthcare operations & patient behavior
